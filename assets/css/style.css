@@ -245,7 +245,7 @@ ul {
 
   .hero,
   .hero-overlay {
-    min-height: calc(100dvh - 70px);
+    min-height: 100dvh;
   }
 
   .hero h1 {
