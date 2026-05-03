@@ -42,6 +42,9 @@
         </li>
       </ul>
     </nav>
+    <button id="navToggle" class="nav-toggle" aria-label="Apri menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
   </div>
 </header>
 
@@ -71,6 +74,23 @@
         </section>
     </main>
 
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    navToggle.addEventListener("click", function () {
+      mainNav.classList.toggle("open");
+      const isOpen = mainNav.classList.contains("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.querySelectorAll(".main-nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
 </body>
 
 </html>
